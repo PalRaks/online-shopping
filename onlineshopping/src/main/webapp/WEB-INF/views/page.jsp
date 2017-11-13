@@ -22,7 +22,7 @@
 <title>Online Shopping - ${title}</title>
 
 <script type="text/javascript">
-window.menu = '${title}';
+	window.menu = '${title}';
 </script>
 
 <!-- Bootstrap core CSS -->
@@ -43,38 +43,44 @@ window.menu = '${title}';
 </head>
 
 <body>
-<div class="wrapper">
-	<!-- Navigation -->
-	<%@include file="./shared/navbar.jsp"%>
-	
-	<div class="content">
-	<!-- Loading the home Content -->
-	<c:if test="${clickHome == true }">
-		<%@include file="home.jsp"%>
-		<!-- /.container -->
-	</c:if>
-	<!-- Loading the about Content -->
-	<c:if test="${clickAbout == true }">
-		<%@include file="about.jsp"%>
-		<!-- /.container -->
-	</c:if>
-	<!-- Loading the Contact Content -->
-	<c:if test="${clickContact == true }">
-		<%@include file="contact.jsp"%>
-		<!-- /.container -->
-	</c:if>
-	
-	</div>
-	<!-- Footer -->
-	<%@include file="./shared/footer.jsp"%>
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="${js}/jquery.min.js"></script>
-	<%-- <script src="vendor/bootstrap/${js}/bootstrap.bundle.min.js"></script> --%>
-	<script src="${js}/bootstrap.bundle.min.js"></script>
-	
-	<!-- Self coded javascript -->
-	<script src="${js}/myapp.js"></script>
+	<div class="wrapper">
+		<!-- Navigation -->
+		<%@include file="./shared/navbar.jsp"%>
+
+		<div class="content">
+			<!-- Loading the home Content -->
+			<c:if test="${clickHome == true }">
+				<%@include file="home.jsp"%>
+
+			</c:if>
+			<!-- Loading the about Content -->
+			<c:if test="${clickAbout == true }">
+				<%@include file="about.jsp"%>
+
+			</c:if>
+			<!-- Loading the Contact Content -->
+			<c:if test="${clickContact == true }">
+				<%@include file="contact.jsp"%>
+
+			</c:if>
+
+			<!-- Loading the View product Content -->
+			<c:if test="${clickAllProducts==true or clickCategoryProducts==true}">
+				<%@include file="listProducts.jsp"%>
+			</c:if>
+
+		</div>
+		<!-- Footer -->
+		<%@include file="./shared/footer.jsp"%>
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/jquery.min.js"></script>
+		<%-- <script src="vendor/bootstrap/${js}/bootstrap.bundle.min.js"></script> --%>
+		<script src="${js}/bootstrap.bundle.min.js"></script>
+
+		<!-- Self coded javascript -->
+		<script src="${js}/myapp.js"></script>
 	</div>
 </body>
 
